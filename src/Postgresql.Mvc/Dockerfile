@@ -8,7 +8,7 @@ COPY src/Postgresql.Mvc/*.csproj ./
 RUN dotnet restore
 
 # Copy everything else and build
-COPY src/Postgresql.Mvc/*.* .
+COPY src/Postgresql.Mvc/ .
 RUN dotnet publish -c Release -o out
 
 
