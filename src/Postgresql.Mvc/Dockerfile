@@ -4,11 +4,11 @@ FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build-env
 WORKDIR /app
 
 # Copy csproj and restore as distinct layers
-COPY *.csproj ./
+COPY src/Postgresql.Mvc/*.csproj ./
 RUN dotnet restore
 
 # Copy everything else and build
-COPY . .
+COPY src/Postgresql.Mvc/*.* .
 RUN dotnet publish -c Release -o out
 
 
