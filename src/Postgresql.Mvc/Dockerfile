@@ -9,8 +9,6 @@ RUN dotnet restore
 
 # Copy everything else and build
 COPY . .
-RUN dotnet tool install --global dotnet-ef  
-RUN dotnet ef database update --project src/Postgresql.Mvc/Postgresql.Mvc.csproj
 RUN dotnet publish -c Release -o out
 
 
