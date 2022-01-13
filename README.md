@@ -73,12 +73,11 @@ Configure connection string in project's appsettings.json, replacing the `userna
 
     choose the repositoryName from previous step
 
-    $ aws ecr list-images --repository-name olien-development
-
+    $ aws ecr list-images --repository-name <ecr name>
 
 ### update local kubeconfig file - 
 
-    $ aws eks update-kubeconfig --name OLIEN-Development --region us-east-1
+    $ aws eks update-kubeconfig --name <cluster name> --region us-east-1
 
 ### Install kubectl -
 
@@ -108,7 +107,7 @@ Configure connection string in project's appsettings.json, replacing the `userna
 
 ### To check if the data is pushed inside postgresql. login into 
 
-    $ psql -h olien.colbewxzq7jv.us-east-1.rds.amazonaws.com -p 5432 -d olien -U postgresql 
+    $ psql -h <rds endpoint> -p 5432 -d <database name> -U <user name> 
 
 
 ### Check the table AspNetUsers -
