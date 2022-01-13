@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Postgresql.Mvc.Data;
+using System;
 
 namespace Postgresql.Mvc
 {
@@ -16,6 +17,7 @@ namespace Postgresql.Mvc
     public Startup(IConfiguration configuration)
     {
       Configuration = configuration;
+      Console.WriteLine(configuration.GetConnectionString("DefaultConnection"));
     }
 
     private IConfiguration Configuration { get; }
