@@ -37,6 +37,10 @@ Configure connection string in project's appsettings.json, replacing the `userna
 
     $  wget https://dot.net/v1/dotnet-install.sh 
 
+### Change permission - 
+
+    $  chmod +x dotnet-install.sh 
+
 ### Run the installation script - 
 
     $ ./dotnet-install.sh --version 5.0.404  --install-dir ~/.dotnet
@@ -49,6 +53,15 @@ Configure connection string in project's appsettings.json, replacing the `userna
 ### install dotnet ef tools - 
 
     $ dotnet tool install --global dotnet-ef
+
+
+### Also export dotnet root
+
+    $ echo "export DOTNET_ROOT=~/.dotnet" >> ~/.bashrc
+### Setup dotnet ef bashrc
+
+    $ echo "export PATH="$PATH:/home/ec2-user/.dotnet/tools" >> ~/.bashrc
+
 
 ### Running the migration 
 
